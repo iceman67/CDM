@@ -1,0 +1,17 @@
+1. building rabbitmq environment
+cd /usr/local/sbin
+sudo ./rabbitmq-server
+
+2. start ipfs daemon
+ipfs daemon
+
+3. run a task  in $HOME/CDM 
+celery -A tasks worker --loglevel=info
+
+4. execute a client 
+
+python 1_keygen.py
+
+python 2_sign.py
+
+python 23_verify.py
