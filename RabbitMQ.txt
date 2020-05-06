@@ -1,0 +1,12 @@
+1. RabbitMQ 설치
+
+실행파일 PATH   /usr/local/Cellar/rabbitmq/3.8.3/sbin
+
+sudo rabbitmqctl add_user jm-user1 sample
+sudo rabbitmqctl add_vhost jm-vhost
+sudo rabbitmqctl set_permissions -p jm-vhost jm-user1 ".*" ".*" ".*"
+    
+app = Celery('tasks', broker='amqp://jm-user1:sample@localhost/jm-vhost')
+
+사용자 jm-user1
+가상호스트 jm-vhost
